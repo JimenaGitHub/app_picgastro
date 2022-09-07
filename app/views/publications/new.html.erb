@@ -1,0 +1,33 @@
+<h1>New publication</h1>
+
+<%= form_with(model: @publication) do |f| %>
+
+<div>
+<%= f.label :title %>
+<%= f.text_field :title %>
+</div>
+
+<div>
+  <h3> Publication data </h3>
+  <%= f.fields_for :tags do |tags_f| %>
+    <%= tags_f.label :name %>
+    <%= tags_f.text_field :name %>
+<% end %>
+</div>
+
+<%= f.submit "Crear publication" %>
+<% end %>
+
+
+
+
+
+
+
+<%#= render "form", publication: @publication %>
+
+<%# <br> %>
+
+<%# <div>
+  <%= link_to "Back to publications", publications_path %>
+<%# </div> %>
